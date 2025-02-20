@@ -14,7 +14,7 @@ import google.generativeai as genai
 from docx import Document
 import io
 
-st.title("AI Tender Proposal Generator")
+st.title("KVA AI BOT")
 
 # Upload Files
 uploaded_csv = st.file_uploader("Upload Project Database (CSV)", type=["csv"])
@@ -65,7 +65,7 @@ if uploaded_csv and uploaded_cv and uploaded_old_proposal:
                 Generate a new tender proposal following the format of the old proposal.
                 """
 
-                response = genai.chat(model="gemini-pro", messages=[{"role": "user", "content": prompt}])
+                response = genai.chat(model="gemini", messages=[{"role": "user", "content": prompt}])
                 proposal_text = response.text
 
                 # Save the generated proposal to a Word document
